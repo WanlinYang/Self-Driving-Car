@@ -10,9 +10,8 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[gray]: ./examples/gray.jpg "Grayscale"
 [blur]: ./examples/blur.jpg "Blur"
-[canny]: ./examples/cannpy.jpg "Canny"
+[canny]: ./examples/canny.jpg "Canny"
 [masked_canny]: ./examples/masked_canny.jpg "Masked Canny"
 [hough]: ./examples/hough_lines.jpg "Hough Lines"
 [long_lines]: ./examples/long_lines.jpg "Long Lines"
@@ -27,7 +26,7 @@ The goals / steps of this project are the following:
 My pipeline consisted of 8 steps.
 
 1. Convert the image to grayscale
-![alt text][gray]
+![Grayscale](./examples/gray.jpg = 200x)
 
 2. Gaussian blur to wipe out noise. The size of kernel is 5 in this case.
 ![alt text][blur]
