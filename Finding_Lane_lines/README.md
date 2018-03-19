@@ -1,6 +1,5 @@
 # **Finding Lane Lines on the Road**
 
----
 
 ## Goals
 
@@ -20,7 +19,6 @@ The goals / steps of this project are the following:
 [long_lines_mask]: ./examples/long_lines_mask.jpg "Masked Long Lines"
 [overlapped]: ./examples/overlapped.jpg "Overlapped"
 
----
 
 ## Reflection
 
@@ -29,30 +27,30 @@ The goals / steps of this project are the following:
 My pipeline consisted of 8 steps.
 
 1. Convert the image to grayscale
-![Grayscale][gray]
+![alt text][gray]
 
 2. Gaussian blur to wipe out noise. The size of kernel is 5 in this case.
-![Blur][blur]
+![alt text][blur]
 
 3. Canny edge detection.
-![Canny][canny]
+![alt text][canny]
 
 4. Mask the image of edge outputed from the previous step.
-![Masked Canny][masked_canny]
+![alt text][masked_canny]
 
 5. Houghline detection. This step outputs a series of coordinates of lines in the form
 of [x1, y1, x2, y2].
-![Hough Lines][hough]
+![alt text][hough]
 
 6. Separate lines can calculate the mean value of lines' coordinates. Then elongate the mean lines
 and plot them on a blank (np.zeros) image.
-![Long Lines][long_lines]
+![alt text][long_lines]
 
 7. Mask the images with elongated line from the previous step.
-![Masked Long Lines][long_lines_mask]
+![alt text][long_lines_mask]
 
 8. Overlap over the original image
-![Overlapped][overlapped]
+![alt text][overlapped]
 
 ### 2. Potential shortcomings with the current pipeline
 
