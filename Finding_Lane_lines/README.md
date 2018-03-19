@@ -53,12 +53,12 @@ and plot them on a blank (np.zeros) image.
 
 ### 2. Potential shortcomings with the current pipeline
 
-One potential shortcoming would be tunning the parameters of OpenCV functions. There
-are several steps that includes many parameters. Although each step was tested carefully,
-not every step can be garanteed to be ideal with tuning by human.
+One potential shortcoming would be tunning the parameters of OpenCV functions. The pipeline
+includes several steps and many parameters. Although each step was tested carefully,
+not every step can be ideal with tuning by human.
 
 ### 3. Possible improvements the pipeline
 
-A possible improvement would be to calculate the mean values of coordinated among frames
-in the video. This may reduce the oscillation of plots when some noise appears in a one frame.
+A possible improvement would be to calculate the mean values of coordinates among frames
+in a video. This may reduce the oscillation of plots when some noise appears in one frame.
 
