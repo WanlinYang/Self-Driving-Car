@@ -26,30 +26,30 @@ The goals / steps of this project are the following:
 My pipeline consisted of 8 steps.
 
 1. Convert the image to grayscale
-<img src="./examples/gray.jpg" height="30%" width="30%">
+<img src="./examples/gray.jpg" height="50%" width="50%">
 
 2. Gaussian blur to wipe out noise. The size of kernel is 5 in this case.
-![alt text][blur]
+<img src="./examples/blur.jpg" height="50%" width="50%">
 
 3. Canny edge detection.
-![alt text][canny]
+<img src="./examples/canny.jpg" height="50%" width="50%">
 
 4. Mask the image of edge outputed from the previous step.
-![alt text][masked_canny]
+<img src="./examples/masked_canny.jpg" height="50%" width="50%">
 
 5. Houghline detection. This step outputs a series of coordinates of lines in the form
 of [x1, y1, x2, y2].
-![alt text][hough]
+<img src="./examples/hough_lines.jpg" height="50%" width="50%">
 
 6. Separate lines can calculate the mean value of lines' coordinates. Then elongate the mean lines
 and plot them on a blank (np.zeros) image.
-![alt text][long_lines]
+<img src="./examples/long_lines.jpg" height="50%" width="50%">
 
 7. Mask the images with elongated line from the previous step.
-![alt text][long_lines_mask]
+<img src="./examples/long_lines_mask.jpg" height="50%" width="50%">
 
 8. Overlap over the original image
-![alt text][overlapped]
+<img src="./examples/overlapped.jpg" height="50%" width="50%">
 
 ### 2. Potential shortcomings with the current pipeline
 
