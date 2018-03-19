@@ -26,7 +26,7 @@ The goals / steps of this project are the following:
 My pipeline consisted of 8 steps.
 
 1. Convert the image to grayscale
-![Grayscale](./examples/gray.jpg){:height=30% width="50%"}
+<img src="./examples/gray.jpg" height="30%" width="30%">
 
 2. Gaussian blur to wipe out noise. The size of kernel is 5 in this case.
 ![alt text][blur]
