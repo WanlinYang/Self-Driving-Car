@@ -29,7 +29,7 @@ I used the numpy library to calculate summary statistics of the traffic signs da
 
 Here is an exploratory visualization of the data set. This image shows an traffic sign example, and the ground truth classification of the traffic sign is given in the data set. Later we will use the traffic sign images and their corresponding labels to train the CNN model.
 
-![dataset_example][./examples/dataset.png]
+![dataset_example](./examples/dataset.png)
 
 ### 2. Design and Test a Model Architecture
 
@@ -39,7 +39,7 @@ As a first step, I decided to convert the images to grayscale because the shape 
 
 Here is an example of a traffic sign image before and after grayscaling.
 
-![gray_scale][./example/grayscale.jpg]
+![gray_scale](./example/grayscale.jpg)
 
 As a last step, I normalized the image data because we want the process of each image to have a score in a similar range so that our gradients do not go out of control.
 
@@ -165,4 +165,4 @@ From above image instances, it easy to find that the clearer the image is, the b
 
 Lastly, we can plot the feature map of the first and the second convolutional layer.
 
-![feature_maps][./examples/feature_maps.png]
+![feature_maps](./examples/feature_maps.png)
