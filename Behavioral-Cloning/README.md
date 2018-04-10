@@ -41,7 +41,7 @@ The model.py file contains the code for training and saving the convolution neur
 
 #### 1. An appropriate model architecture has been employed
 
-My model consists of a convolution neural network with 3x3 filter sizes and depths between 6 and 16 (model.py lines 48-64) 
+My model consists of a convolution neural network with 5x5 filter sizes and depths between 6 and 16 (model.py lines 48-64) 
 
 The model includes RELU layers to introduce nonlinearity (code line 52), and the data is normalized in the model using a Keras lambda layer (code line 50). 
 
@@ -116,7 +116,7 @@ To augment the data sat, I also flipped images and angles thinking that this wou
 ![flip1](images/flip1.jpg)
 ![flip2](images/flip2.jpg)
 
-After the collection process, I had X number of data points.
+After the collection process, I had 2292 number of data points.
 
 
 I finally randomly shuffled the data set and put 20% of the data into a validation set. 
