@@ -71,7 +71,7 @@ Although the mean squard error was low in traing, the car was easily to run outs
 
 To combat the overfitting, I reduced the depths of filters to 16. Then I test the simulation again. The overall performance was acceptable, but there were a few spots where the vehicle fell off the track. To improve the driving behavior in these cases, I collected the samples around those spots by recording the recovering driving process.
 
-At the end of the process, the vehicle is able to drive autonomously around the track without leaving the road. I manually adjusted the car only once in the final simulation.
+At the end of the process, the vehicle is able to drive autonomously around the track without leaving the road. I did not have to manually adjusted the car in the final simulation.
 
 #### 2. Final Model Architecture
 
