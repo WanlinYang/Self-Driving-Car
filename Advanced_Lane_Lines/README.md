@@ -71,7 +71,7 @@ The code for my perspective transform is included in the cell "Perspective trans
 
 Here is the warped counterpart image of the test image, and the lines appear parallel in the warped image.
 
-![warp][test_warped.png]
+![warp][./output_images/test_warped.png]
 
 #### 4. Identify lane-line pixels and fit their positions with a polynomial
 
