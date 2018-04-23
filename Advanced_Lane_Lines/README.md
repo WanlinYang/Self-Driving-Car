@@ -79,28 +79,36 @@ Then I did some other stuff and fit my lane lines with a 2nd order polynomial ki
 
 <img src="./examples/color_fit_lines.jpg" height="50%" width="50%">
 
-#### 5. Calculate the radius of curvature of the lane and the position of the vehicle with respect to center.
+#### 5. Radius of curvature of the lane and the position of the vehicle with respect to center
 
-I did this in lines # through # in my code in `my_other_file.py`
+I did this in the 6th cell of my jupyter notebook. The radii of left and right lines in pixels and meter spaces are calculated separately in my code.
 
-#### 6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
+#### 6. Result image plotted back down onto the road
 
-I implemented this step in lines # through # in my code in `yet_another_file.py` in the function `map_lane()`.  Here is an example of my result on a test image:
+I warped the bird-view image back to the original image in the 7th cell, and inserted the text into the output image in the 8th cell. Here is an example of my result on a test image:
 
-<img src="./examples/example_output.jpg" height="50%" width="50%">
+<img src="./output_images/dst_image.jpg" height="50%" width="50%">
 
----
+#### 7. Merge step 4 to step 6 together
+
+In the 9th cell I merged step 4 to step 6 together. The `detect_lane()` function takes an original road lane image and outputs the final image labeling the region of road lane.
+
 
 ### Pipeline (video)
 
-#### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
+#### 1. Video class
 
-Here's a [link to my video result](./output_video.mp4)
+In the last cell, I converted the function in step 7 to a `Video` class. The class is initialized with the parameters of camera calibration and perspective transform, as well as the first frame of a video. During the lane finding process, for every 10 frame, the class calls `detect_lane_blind()`, which detects the lane blindly. In other consecutive 9 frames, the Video class calls `detect_lane()`, which detects the lane based on the result of the previos frame. That will save the time of lane detection. 
 
----
+#### 2. Link to the final video output
+
+Here is a [link to my video result](./output_video.mp4)
+
 
 ### Discussion
 
-#### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
+#### 1. Problems / issues you faced in your implementation of this project
 
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+In the final video, the detection fails in several frames, but that did not hurt too much to the self-driving. To make the performance better, I tried several methods, such as evaluating the direction of gradient by combining x and y sobel, and using the red channel for lane detection. But finally the original method that only uses sobel in x direction and gray scale performed the best, and I adopted this method.
+
+Another problem is the time consumption. The code needs more than 15 minutes to output a 50-second video. Maybe using a better computer or GPU will help to increase the efficiency.
