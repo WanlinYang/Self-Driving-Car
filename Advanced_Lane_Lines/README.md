@@ -75,9 +75,9 @@ Here is the warped counterpart image of the test image, and the lines appear par
 
 #### 4. Identify lane-line pixels and fit their positions with a polynomial
 
-Then I did some other stuff and fit my lane lines with a 2nd order polynomial kinda like this:
+In the 5th cell, I applied the sliding window method to fit the lane-line pixels with a polynomial. The sliding window starts from the bottom of the binary picture, and regards the two peaks as the positions of left and right lanes. Then the sliding window moves upward and find the rest part of the lane lines. Finally the `np.polyfit()` function can fit the pixel position with a 2nd order polynomial. Here is the result of the lane line curve. 
 
-<img src="./examples/color_fit_lines.jpg" height="50%" width="50%">
+![curve](output_images/lane_lines.png)
 
 #### 5. Radius of curvature of the lane and the position of the vehicle with respect to center
 
