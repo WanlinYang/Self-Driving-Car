@@ -11,15 +11,6 @@
 * Warp the detected lane boundaries back onto the original image.
 * Output visual display of the lane boundaries and numerical estimation of lane curvature and vehicle position.
 
-[//]: # (Image References)
-
-[image1]: ./examples/undistort_output.png "Undistorted"
-[image2]: ./test_images/test1.jpg "Road Transformed"
-[image3]: ./examples/binary_combo_example.jpg "Binary Example"
-[image4]: ./examples/warped_straight_lines.jpg "Warp Example"
-[image5]: ./examples/color_fit_lines.jpg "Fit Visual"
-[image6]: ./examples/example_output.jpg "Output"
-[video1]: ./project_video.mp4 "Video"
 
 ## Rubric Points
 
@@ -75,7 +66,7 @@ Here is the warped counterpart image of the test image, and the lines appear par
 
 #### 4. Identify lane-line pixels and fit their positions with a polynomial
 
-In the 5th cell, I applied the sliding window method to fit the lane-line pixels with a polynomial. The sliding window starts from the bottom of the binary picture, and regards the two peaks as the positions of left and right lanes. Then the sliding window moves upward and find the rest part of the lane lines. Finally the `np.polyfit()` function can fit the pixel position with a 2nd order polynomial. Here is the result of the lane line curve. 
+In the 5th cell, I applied the sliding window method to fit the lane-line pixels with a 2nd-order polynomial. The sliding window starts from the bottom of the binary picture, and regards two peaks as positions of left and right lanes. Then the sliding window moves upward and find the rest part of the lane lines. Finally the `np.polyfit()` function can fit the pixel position with a 2nd-order polynomial. Here is the result of the lane line curve. 
 
 ![curve](output_images/lane_lines.png)
 
@@ -109,6 +100,8 @@ Here is a [link to my video result](./output_video.mp4)
 
 #### 1. Problems / issues you faced in your implementation of this project
 
-In the final video, the detection fails in several frames, but that did not hurt too much to the self-driving. To make the performance better, I tried several methods, such as evaluating the direction of gradient by combining x and y sobel, and using the red channel for lane detection. But finally the original method that only uses sobel in x direction and gray scale performed the best, and I adopted this method.
+In the final video, the detection fails a little in several frames, but that did not hurt too much to the self-driving. To make the performance better, I tried several methods, such as evaluating the direction of gradient by combining x and y sobel, and using the red channel for lane detection. But finally the original method that only uses sobel in x direction and gray scale performed the best, and I adopted this method.
+
+To further improve the pipeline, the color channel can be introduced. For example, we can tune the thresholds of the red and green channels separately, and combine them with current conditions. To detect the lane in a more complicated environment, deep learning method is also an advanced approach.
 
 Another problem is the time consumption. The code needs more than 15 minutes to output a 50-second video. Maybe using a better computer or GPU will help to increase the efficiency.
