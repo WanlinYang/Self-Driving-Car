@@ -100,8 +100,6 @@ Here is a [link to my video result](./output_video.mp4)
 
 #### 1. Problems / issues you faced in your implementation of this project
 
-In the final video, the detection fails a little in several frames, but that did not hurt too much to the self-driving. To make the performance better, I tried several methods, such as evaluating the direction of gradient by combining x and y sobel, and using the red channel for lane detection. But finally the original method that only uses sobel in x direction and gray scale performed the best, and I adopted this method.
-
-To further improve the pipeline, the color channel can be introduced. For example, we can tune the thresholds of the red and green channels separately, and combine them with current conditions. To detect the lane in a more complicated environment, deep learning method is also an advanced approach.
+In the final video, the detection fails a little in several frames, but that did not hurt too much to the self-driving. To further improve the pipeline, the color channel can be introduced. For example, we can tune the thresholds of the red and green channels separately, and combine them with current conditions. To detect the lane in a more complicated environment, deep learning method is also an advanced approach.
 
 Another problem is the time consumption. The code needs more than 15 minutes to output a 50-second video. Maybe using a better computer or GPU will help to increase the efficiency.
