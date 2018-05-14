@@ -28,7 +28,7 @@ I started by reading in all the `vehicle` and `non-vehicle` images.  Here is an 
 
 I then explored different color spaces and different `skimage.hog()` parameters (`orientations`, `pixels_per_cell`, and `cells_per_block`).  I grabbed a image to get a feel for what the `skimage.hog()` output of a car image looks like. Here is an example using the `Gray` color space and HOG parameters of `orientations=8`, `pixels_per_cell=(8, 8)` and `cells_per_block=(2, 2)`:
 
-![hog_demo][examples/hog_demo.png]
+![hog_demo](examples/hog_demo.png)
 
 #### 3. Color features
 
@@ -57,7 +57,7 @@ The function of sliding window search is in my 5th code cell. I decided to searc
 
 Ultimately I set `scale=1.5`, `cells_per_step=1` respectively as my searching scale and step size. Combining the classifier in the previous section, the `find_cars()` function provides a nice result. Here are some example images:
 
-<img src="./examples/tests_demo.png" height="70%" width="70%">
+[tests_img](examples/tests_demo.png)
 
 ### Multiple Detections & False Positives
 
@@ -65,13 +65,13 @@ Ultimately I set `scale=1.5`, `cells_per_step=1` respectively as my searching sc
 
 To make a heat-map, I added "heat" (+=1) for all pixels within windows where a positive detection is reported by the classifier. A bounding-box image and the corresponding heatmap for an image look like this:
 
-![heatmap][examples/heatmap.png]
+![heatmap](examples/heatmap.png)
 
 #### 2. Lable the heatmap
 
 Then I used the `label()` function from `scipy.ndimage.measurements` to detect multiple cars. The threshold of heatmap that determines a detected car in this project is 3. Here is an example of labeled image and the final result:
 
-![labeled_img][examples/labeled_img.png]
+![labeled_img](examples/labeled_img.png)
 
 
 ### Video Implementation
