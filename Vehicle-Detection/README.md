@@ -57,7 +57,7 @@ The function of sliding window search is in my 5th code cell. I decided to searc
 
 Ultimately I set `scale=1.5`, `cells_per_step=1` respectively as my searching scale and step size. Combining the classifier in the previous section, the `find_cars()` function provides a nice result. Here are some example images:
 
-[tests_img](examples/tests_demo.png)
+<img src="./examples/tests_demo.png" height="90%" width="90%">
 
 ### Multiple Detections & False Positives
 
