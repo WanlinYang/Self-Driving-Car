@@ -11,7 +11,8 @@
 
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/513/view) Points
-### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
+
+Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
 
 
 ### Histogram of Oriented Gradients (HOG)
@@ -51,7 +52,7 @@ As we can see, when `cspace=YCrCb`, `orient=8`, `pix_per_cell=8`, the accuracy i
 
 #### 1. Implementation of a sliding window search
 
-The function of sliding window search is in my 5th code cell. I decided to search window positions where cars might appear. The boundary pixels of searching window on y-direction is `[350, 656]` in this project. Then the sliding window technique is performed in this range.
+The function of sliding window search is in my 5th code cell. I decided to search window positions where cars might appear. The boundary pixels of searching window on y-direction is `[350, 656]` in this project. Then the sliding window technique will be performed in this range.
 
 #### 2. Examples of test image
 
@@ -71,7 +72,7 @@ To make a heat-map, I added "heat" (+=1) for all pixels within windows where a p
 
 Then I used the `label()` function from `scipy.ndimage.measurements` to detect multiple cars. The threshold of heatmap that determines a detected car in this project is 3. Here is an example of labeled image and the final result:
 
-<img src="./examples/heatmap.png">
+<img src="./examples/labeled_img.png">
 
 
 ### Video Implementation
@@ -82,11 +83,11 @@ Here's a [link to my video result](./project_output_video.mp4)
 
 #### 2. Image processing pipeline and multiple frames
 
-For each frame in this video. I applied the pipeline of processing a single frame in the previous section. Besides detecting vehicles in a single frames, I also overlapped bounding boxes of 3 most recent frames to avoid noises of a single frame. The final result of the output video seems good.
+For each frame in this video. I applied the pipeline of processing a single frame in the previous section. Besides detecting vehicles in a single frame, I also overlapped bounding boxes of 3 most recent frames to avoid noises of a single frame. The final result of the output video seems good.
 
 ### Discussion
 
 #### 1. Briefly discuss any problems / issues you faced in the implementation of this project
 
-The pipeline may mistakenly recognize some scene on the road or on the sides of the road as a vehicle. Sometimes the pipeline cannot detect a vehicle further. To make it better, we may segment more parts in the scene that a car cannot apprear. Maybe some classification techniques, like deep learning, will be a classifier to make the pipeline more robust.
+The pipeline may mistakenly recognize some scene on the road or on the sides of the road as a vehicle. Sometimes the pipeline cannot detect a vehicle further from the camera. To make it better, we may segment out more parts in the scene that a car cannot apprear. Maybe some classification techniques, like deep learning, will be a better classifier to make the pipeline more robust.
 
