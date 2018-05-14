@@ -15,7 +15,7 @@
 Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
 
 
-### Histogram of Oriented Gradients (HOG)
+### Feature Extraction
 
 #### 1. Extract HOG features from the training images
 
